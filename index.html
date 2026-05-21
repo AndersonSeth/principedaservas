@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Príncipe das Folhas – Ervas Sagradas</title>
+<meta name="description" content="Especializada em ervas sagradas e produtos naturais para uso espiritual. Kosi Ewe Kosi Orisa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dim: #7A6230;
+    --deep: #0D0A0E;
+    --deep2: #150F1A;
+    --deep3: #1C1428;
+    --purple-dark: #2A1A45;
+    --purple-mid: #3D2660;
+    --purple-light: #7B5EA7;
+    --green: #2E6B3E;
+    --green-bright: #4CAF70;
+    --cream: #F5EDD8;
+    --cream-dim: #C9B98A;
+    --text: #EDE0C4;
+    --text-dim: #9A8A6A;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--deep);
+    color: var(--text);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ── ESTRELAS DE FUNDO ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(201,168,76,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 40%, rgba(201,168,76,0.25) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 55% 10%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 60%, rgba(201,168,76,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 85% 25%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 20% 75%, rgba(201,168,76,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 80%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 45% 90%, rgba(201,168,76,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 35%, rgba(255,255,255,0.15) 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 55%, rgba(201,168,76,0.3) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px 80px;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(61,38,96,0.7) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(46,107,62,0.25) 0%, transparent 70%),
+      var(--deep);
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--deep));
+    pointer-events: none;
+  }
+
+  /* mandala ornamento */
+  .hero-ornament {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(700px, 100vw);
+    height: min(700px, 100vw);
+    opacity: 0.04;
+    pointer-events: none;
+  }
+
+  .logo-wrap {
+    position: relative;
+    z-index: 1;
+    width: min(260px, 70vw);
+    margin-bottom: 32px;
+    animation: fadeDown 1.2s ease both;
+  }
+
+  .logo-wrap img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 40px rgba(201,168,76,0.5));
+  }
+
+  .hero-eyebrow {
+    position: relative;
+    z-index: 1;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  .hero-title {
+    position: relative;
+    z-index: 1;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2rem, 6vw, 3.8rem);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.15;
+    text-shadow: 0 0 60px rgba(201,168,76,0.35), 0 2px 4px rgba(0,0,0,0.8);
+    animation: fadeUp 1s 0.5s ease both;
+  }
+
+  .hero-title span {
+    display: block;
+    font-size: 0.55em;
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.12em;
+    margin-top: 8px;
+  }
+
+  .hero-divider {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 32px auto;
+    width: min(400px, 90%);
+    animation: fadeUp 1s 0.7s ease both;
+  }
+
+  .hero-divider::before,
+  .hero-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+  }
+
+  .hero-divider-icon {
+    font-size: 1.4rem;
+    color: var(--gold);
+  }
+
+  .hero-tagline {
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--cream-dim);
+    max-width: 480px;
+    animation: fadeUp 1s 0.9s ease both;
+  }
+
+  .hero-axe {
+    position: relative;
+    z-index: 1;
+    margin-top: 28px;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    animation: fadeUp 1s 1.1s ease both;
+  }
+
+  .hero-cta {
+    position: relative;
+    z-index: 1;
+    margin-top: 48px;
+    animation: fadeUp 1s 1.3s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold) 50%, var(--gold-light) 100%);
+    color: var(--deep);
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 30px rgba(201,168,76,0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(201,168,76,0.5);
+    filter: brightness(1.1);
+  }
+
+  .btn-primary svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  /* ── SEÇÃO SOBRE ── */
+  .section {
+    position: relative;
+    padding: 100px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-label {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    color: var(--cream);
+    font-weight: 400;
+  }
+
+  .section-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 20px auto 0;
+    opacity: 0.6;
+  }
+
+  /* card sobre */
+  .sobre-card {
+    background: linear-gradient(145deg, rgba(42,26,69,0.6), rgba(21,15,26,0.8));
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sobre-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .sobre-card p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--cream-dim);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .sobre-card p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .sobre-quote {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    line-height: 1.7;
+  }
+
+  /* ── MISSÃO / PILARES ── */
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .pilar {
+    background: linear-gradient(160deg, rgba(42,26,69,0.5), rgba(13,10,14,0.7));
+    border: 1px solid rgba(201,168,76,0.15);
+    border-top: 2px solid var(--gold-dim);
+    padding: 36px 28px;
+    text-align: center;
+    border-radius: 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .pilar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.12);
+  }
+
+  .pilar-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .pilar h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+  }
+
+  .pilar p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  /* ── PRODUTOS ── */
+  .produtos-bg {
+    background: linear-gradient(to bottom, var(--deep), var(--deep2), var(--deep));
+    position: relative;
+  }
+
+  .produtos-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(61,38,96,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .produto-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 24px;
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-left: 3px solid var(--gold-dim);
+    border-radius: 2px;
+    font-size: 1rem;
+    color: var(--cream-dim);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .produto-tag:hover {
+    background: rgba(201,168,76,0.1);
+    border-left-color: var(--gold);
+    color: var(--cream);
+  }
+
+  .produto-tag::before {
+    content: '🌿';
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  /* ── CTA FINAL ── */
+  .cta-section {
+    text-align: center;
+    padding: 100px 24px 120px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(46,107,62,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-box {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 48px;
+    border: 1px solid rgba(201,168,76,0.25);
+    background: linear-gradient(145deg, rgba(42,26,69,0.4), rgba(13,10,14,0.6));
+    border-radius: 4px;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .cta-box::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .cta-box h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    color: var(--cream);
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .cta-box p {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--cream-dim);
+    margin-bottom: 40px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── RODAPÉ ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  footer strong {
+    color: var(--gold-dim);
+    font-style: normal;
+  }
+
+  /* ── TIK TOK LINK ── */
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold-dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    margin-top: 20px;
+    transition: color 0.2s;
+  }
+
+  .social-link:hover {
+    color: var(--gold-light);
+  }
+
+  /* ── ORNAMENTOS SVG ── */
+  .ornament-top,
+  .ornament-bottom {
+    display: block;
+    margin: 0 auto;
+    opacity: 0.35;
+  }
+
+  /* ── ANIMAÇÕES ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVO ── */
+  @media (max-width: 600px) {
+    .sobre-card { padding: 32px 24px; }
+    .cta-box { padding: 48px 28px; }
+    .pilares-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+<header class="hero">
+
+  <!-- ornamento mandala SVG fundo -->
+  <svg class="hero-ornament" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="rgba(201,168,76,1)" stroke-width="0.5">
+      <circle cx="250" cy="250" r="200"/>
+      <circle cx="250" cy="250" r="160"/>
+      <circle cx="250" cy="250" r="120"/>
+      <circle cx="250" cy="250" r="80"/>
+      <circle cx="250" cy="250" r="40"/>
+      <!-- linhas radiais -->
+      <line x1="250" y1="50" x2="250" y2="450"/>
+      <line x1="50" y1="250" x2="450" y2="250"/>
+      <line x1="108" y1="108" x2="392" y2="392"/>
+      <line x1="392" y1="108" x2="108" y2="392"/>
+      <!-- oito pontos -->
+      <line x1="79" y1="179" x2="421" y2="321"/>
+      <line x1="179" y1="79" x2="321" y2="421"/>
+      <line x1="421" y1="179" x2="79" y2="321"/>
+      <line x1="321" y1="79" x2="179" y2="421"/>
+      <!-- estrela externa -->
+      <polygon points="250,40 263,90 315,90 273,120 288,170 250,145 212,170 227,120 185,90 237,90"/>
+      <!-- losango -->
+      <polygon points="250,80 390,250 250,420 110,250"/>
+    </g>
+  </svg>
+
+  <div class="logo-wrap">
+    <img src="img/logo.jpeg" alt="Príncipe das Folhas – Ervas Sagradas">
+  </div>
+
+  <p class="hero-eyebrow">☘️ &nbsp; ervas sagradas &nbsp; ☘️</p>
+
+  <h1 class="hero-title">
+    Príncipe das Folhas
+    <span>Força, Fé & Tradição</span>
+  </h1>
+
+  <div class="hero-divider">
+    <span class="hero-divider-icon">✦</span>
+  </div>
+
+  <p class="hero-tagline">
+    Especializada em ervas sagradas e produtos naturais para uso espiritual — qualidade, axé e respeito às tradições.
+  </p>
+
+  <p class="hero-axe">✦ &nbsp; Kosi Ewe Kosi Orisa &nbsp; ✦</p>
+
+  <div class="hero-cta">
+    <a href="https://wa.me/5511963500660?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="btn-primary" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- ══════════════ SOBRE ══════════════ -->
+<main>
+<section class="section">
+  <div class="section-header">
+    <span class="section-label">Nossa história</span>
+    <h2 class="section-title">Mais que uma loja,<br>uma missão ancestral</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="sobre-card">
+    <p>
+      Especializada em ervas sagradas e produtos naturais para uso espiritual, nossa loja oferece qualidade, axé e respeito às tradições. Aqui você encontra folhas, banhos, defumações e elementos preparados para fortalecer corpo, mente e espírito.
+    </p>
+    <p>
+      Somos bem mais que uma loja — visamos bem mais que o comercial. Visamos a qualidade e a nossa missão dentro do segmento. Venda de ervas sagradas é bem mais que o lado comercial; encaramos como uma missão deixada por nossos ancestrais.
+    </p>
+    <div class="sobre-quote">
+      ☘️ Kosi Ewe Kosi Orisa<br>
+      ☘️ Sem folhas não há Orisa
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PILARES ══════════════ -->
+<section class="section" style="padding-top: 0;">
+  <div class="section-header">
+    <span class="section-label">Nossos valores</span>
+    <h2 class="section-title">O que nos move</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="pilares-grid">
+    <div class="pilar">
+      <span class="pilar-icon">🌿</span>
+      <h3>Tradição</h3>
+      <p>Respeitamos os saberes ancestrais e as práticas transmitidas de geração em geração.</p>
+    </div>
+    <div class="pilar">
+      <span class="pilar-icon">✨</span>
+      <h3>Qualidade</h3>
+      <p>Ervas e produtos selecionados com cuidado para garantir eficácia e pureza em cada entrega.</p>
+    </div>
+    <div class="pilar">
+      <span class="pilar-icon">🙏</span>
+      <h3>Axé</h3>
+      <p>Cada item é preparado com intenção, energia e respeito pelas forças que nos guiam.</p>
+    </div>
+    <div class="pilar">
+      <span class="pilar-icon">🌱</span>
+      <h3>Missão</h3>
+      <p>Mais do que vender, cumprimos um chamado: manter viva a conexão entre pessoas e Orisas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRODUTOS ══════════════ -->
+<div class="produtos-bg">
+<section class="section">
+  <div class="section-header">
+    <span class="section-label">O que oferecemos</span>
+    <h2 class="section-title">Nossos Produtos</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="produtos-grid">
+    <div class="produto-tag">Ervas Sagradas</div>
+    <div class="produto-tag">Banhos Rituais</div>
+    <div class="produto-tag">Defumações</div>
+    <div class="produto-tag">Folhas Litúrgicas</div>
+    <div class="produto-tag">Elementos Espirituais</div>
+    <div class="produto-tag">Produtos Naturais</div>
+    <div class="produto-tag">Preparos Especiais</div>
+    <div class="produto-tag">Consultoria Espiritual</div>
+  </div>
+
+  <p style="text-align:center; margin-top: 40px; font-style: italic; color: var(--text-dim); font-size: 0.95rem;">
+    Não encontrou o que procura? Entre em contato — trabalhamos com encomendas e pedidos especiais.
+  </p>
+</section>
+</div>
+
+<!-- ══════════════ CTA FINAL ══════════════ -->
+<section class="cta-section">
+  <div class="cta-box">
+    <h2>Pronto para fortalecer<br>sua espiritualidade?</h2>
+    <p>Fale conosco pelo WhatsApp para orçamentos, encomendas ou dúvidas sobre nossos produtos.</p>
+
+    <a href="https://wa.me/5511963500660?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="btn-primary" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Pedir Orçamento Agora
+    </a>
+
+    <br>
+
+    <a href="https://www.tiktok.com/@principedasfolhas07" class="social-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.8a4.85 4.85 0 01-1.07-.11z"/>
+      </svg>
+      Nos siga no TikTok
+    </a>
+  </div>
+</section>
+</main>
+
+<!-- ══════════════ ENDEREÇO ══════════════ -->
+<section class="section" style="padding-bottom: 40px;">
+  <div class="section-header">
+    <span class="section-label">Onde nos encontrar</span>
+    <h2 class="section-title">Endereço</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="sobre-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding: 40px 48px;">
+    <span style="font-size:2rem;">📍</span>
+    <p style="font-style:normal; font-size:1.1rem; color:var(--cream); text-align:center; margin:0;">
+      Rua Rubens Borba Alves de Moraes, 219 — Fundos
+    </p>
+    <p style="font-style:italic; color:var(--text-dim); margin:0; font-size:0.95rem;">CEP 08465-090 · São Paulo – SP</p>
+    <p style="font-style:italic; color:var(--text-dim); margin:0; font-size:0.9rem;">Atendimento mediante agendamento pelo WhatsApp</p>
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=Rua+Rubens+Borba+Alves+de+Moraes+219+CEP+08465090+São+Paulo"
+      target="_blank"
+      rel="noopener"
+      style="margin-top:12px; display:inline-flex; align-items:center; gap:8px; color:var(--gold); font-size:0.95rem; text-decoration:none; border:1px solid rgba(201,168,76,0.3); padding:10px 24px; border-radius:2px; transition:background 0.2s;"
+      onmouseover="this.style.background='rgba(201,168,76,0.1)'"
+      onmouseout="this.style.background='transparent'"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Ver no Google Maps
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════ RODAPÉ ══════════════ -->
+<footer>
+  <p><strong>Príncipe das Folhas</strong> — Ervas Sagradas</p>
+  <p style="margin-top:8px;">☘️ &nbsp; Kosi Ewe Kosi Orisa &nbsp; ☘️</p>
+</footer>
+
+</body>
+</html>
